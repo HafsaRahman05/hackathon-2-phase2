@@ -37,69 +37,57 @@ export default function DashboardPage() {
 
   const handleTaskCreated = () => {
     setShowCreateForm(false);
-    // Trigger task list refresh
     setRefreshTrigger((prev) => prev + 1);
   };
 
   const handleTaskUpdated = () => {
-    // Trigger task list refresh
     setRefreshTrigger((prev) => prev + 1);
   };
 
-  // Show loading state while checking authentication
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-tr from-purple-50 via-pink-50 to-yellow-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500 mx-auto"></div>
           <p className="mt-4 text-gray-600">Loading...</p>
         </div>
       </div>
     );
   }
 
-  // Don't render dashboard if not authenticated
-  if (!isAuthenticated || !user) {
-    return null;
-  }
+  if (!isAuthenticated || !user) return null;
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-tr from-purple-50 via-pink-50 to-yellow-50 px-4 py-8">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex justify-between items-center">
-            <div>
-              <h1 className="text-2xl font-bold text-gray-900">
-                My Tasks
-              </h1>
-              <p className="text-sm text-gray-600 mt-1">
-                Welcome back, {user.email}
-              </p>
-            </div>
-            <button
-              onClick={handleSignOut}
-              className="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-md transition-colors duration-200"
-            >
-              Sign Out
-            </button>
+      <header className="max-w-7xl mx-auto mb-8">
+        <div className="bg-white/50 backdrop-blur-md rounded-3xl shadow-2xl p-6 flex justify-between items-center border border-white/20">
+          <div>
+            <h1 className="text-2xl font-bold text-gray-900">My Tasks</h1>
+            <p className="text-gray-600 mt-1">Welcome back, {user.email}</p>
           </div>
+          <button
+            onClick={handleSignOut}
+            className="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-full shadow-md hover:scale-105 transform transition-all duration-300 w-full sm:w-auto px-10 py-3"
+          >
+            Sign Out
+          </button>
         </div>
       </header>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="max-w-7xl mx-auto space-y-8">
         {/* Create Task Section */}
-        <div className="mb-8">
+        <div>
           {!showCreateForm ? (
             <button
               onClick={() => setShowCreateForm(true)}
-              className="w-full sm:w-auto px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg shadow-md transition-colors duration-200"
+              className="w-full sm:w-auto px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-full shadow-lg hover:scale-105 transform transition-all duration-300"
             >
               + Create New Task
             </button>
           ) : (
-            <div className="bg-white rounded-lg shadow-md p-6">
+            <div className="bg-white/50 backdrop-blur-md rounded-3xl shadow-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
                 <h2 className="text-xl font-semibold text-gray-900">
                   Create New Task
@@ -133,14 +121,14 @@ export default function DashboardPage() {
         </div>
 
         {/* Task List Section */}
-        <div className="bg-white rounded-lg shadow-md">
-          <div className="p-6 border-b border-gray-200 flex justify-between items-center">
+        <div className="bg-white/50 backdrop-blur-md rounded-3xl shadow-2xl border border-white/20">
+          <div className="p-6 border-b border-white/30 flex justify-between items-center">
             <h2 className="text-xl font-semibold text-gray-900">
               Your Tasks
             </h2>
             <button
               onClick={() => setShowTaskList(!showTaskList)}
-              className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-md transition-colors duration-200"
+              className="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-full shadow-md hover:scale-105 transform transition-all duration-300"
             >
               {showTaskList ? "Hide Tasks" : "View Tasks"}
             </button>

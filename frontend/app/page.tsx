@@ -76,7 +76,7 @@ export default function HomePage() {
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
           <Link
             href="/signup"
-            className="w-full sm:w-auto px-10 py-3 bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-500 text-white font-bold rounded-full shadow-lg hover:scale-105 transform transition-all duration-300"
+            className="w-full sm:w-auto px-10 py-3 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-full shadow-lg hover:scale-105 transform transition-all duration-300"
           >
             Get Started - Sign Up
           </Link>

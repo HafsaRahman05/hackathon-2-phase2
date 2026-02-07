@@ -197,7 +197,7 @@ export default function TaskForm({
         <button
           type="submit"
           disabled={isSubmitting}
-          className="flex-1 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-400 disabled:cursor-not-allowed text-white font-medium rounded-md shadow-sm transition-colors duration-200"
+          className="flex-1 px-4 py-2 bg-purple-600 hover:bg-purple-700 disabled:bg-purple-400 disabled:cursor-not-allowed text-white font-medium rounded-md shadow-sm transition-colors duration-200"
         >
           {isSubmitting
             ? isEditMode

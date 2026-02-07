@@ -128,7 +128,7 @@ export default function TaskItem({
             checked={task.is_completed}
             onChange={handleToggleCompletion}
             disabled={isToggling || isDeleting}
-            className="w-5 h-5 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500 disabled:cursor-not-allowed disabled:opacity-50 cursor-pointer"
+            className="w-5 h-5 text-purple-600 border-gray-300 rounded focus:ring-purple-500 disabled:cursor-not-allowed disabled:opacity-50 cursor-pointer"
             aria-label={`Mark task "${task.title}" as ${task.is_completed ? "incomplete" : "complete"}`}
           />
         </div>
@@ -172,7 +172,7 @@ export default function TaskItem({
           <button
             onClick={() => setIsEditing(true)}
             disabled={isDeleting}
-            className="p-2 text-gray-500 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="p-2 text-gray-500 hover:text-purple-600 hover:bg-purple-50 rounded-md transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed"
             aria-label={`Edit task "${task.title}"`}
           >
             <svg

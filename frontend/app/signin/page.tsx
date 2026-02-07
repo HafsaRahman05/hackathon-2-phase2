@@ -85,7 +85,7 @@ function SignInForm() {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full py-3 bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-500 text-white font-bold rounded-full shadow-lg hover:scale-105 transform transition-all duration-300"
+              className="w-full py-3 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-full shadow-lg hover:scale-105 transform transition-all duration-300"
             >
               {isLoading ? "Signing In..." : "Sign In"}
             </button>
